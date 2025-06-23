@@ -1,0 +1,13 @@
+<DNS>, *.<DNS> {
+        tls {
+                dns desec {
+                        token <desec-token>
+                }
+        }
+        reverse_proxy localhost:80 {
+                transport http {
+                        tls
+                        tls_insecure_skip_verify
+                }
+        }
+}
