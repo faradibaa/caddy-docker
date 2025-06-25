@@ -1,0 +1,6 @@
+docker network create \
+  --driver=bridge \
+  --subnet=<ipv4-subnet> \
+  --ipv6 \
+  --subnet=<ipv6-subnet> \
+  shared-net
