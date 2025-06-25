@@ -3,6 +3,8 @@ services:
     build: .
     restart: unless-stopped
     container_name: caddy
+    networks:
+      - shared-net
     ports:
       - "80:80"
       - "443:443"
@@ -12,3 +14,7 @@ services:
       - ./site:/srv
       - ./caddy_data:/data
       - ./caddy_config:/config
+
+networks:
+  shared-net:
+    external: true
